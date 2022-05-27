@@ -1,0 +1,142 @@
+doctype html
+html
+    head
+        title Post
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/post.css')
+        script(src='js/auth.js')
+        script(script src="https://cdn.jsdelivr.net/gh/supertokens/supertokens-website/bundle/bundle.js")
+        script.
+              supertokens.init({
+                apiDomain: "http://localhost:3001",
+                apiBasePath: "/auth"
+              });
+    style.
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+
+        body {
+            background: url(https://i.pinimg.com/originals/08/b5/49/08b549c185d5972b99890357a2054f3f.jpg);
+            background-repeat: no-repeat;
+            height: 600px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: auto;
+            text-align: center;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            width: 50%;
+            margin-top: 200px ;
+            margin-botton: 290px ;
+
+            border-bottom: #de8949;
+            border-bottom-style: solid;
+            border-bottom-width: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: #675b7c;
+
+        }
+
+        /* SEARCH*/
+
+        form {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+            background: #f4eafc;
+            border-bottom: 4px solid #211e25;
+        }
+
+        input, button {
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        input {
+            width: 100%;
+            height: 42px;
+            padding-left: 15px;
+        }
+
+        button {
+            height: 42px;
+            width: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background: #de8949;
+            color: #211e25;
+        }
+
+        button:before {
+            font-family: FontAwesome;
+            font-size: 20px;
+            color: #211e25;
+        }
+
+        a:hover {
+            color: #c93961;
+        }
+
+        img{
+            max-width: 80%;
+            max-height: 300px;
+        }
+    body
+        .card
+            p
+                a(href='posts/post/' + post.id + '/edit', style='color: green' ) Редактировать
+                |  /
+                a(href='posts/post/' + post.id + '/delete', style='color: red' )  Удалить
+                |  /
+                a(href='posts' style="margin-top: 50px")  Назад
+            h1 #{post.title}
+            h3 #{post.createdAt.toISOString().replace('T', ' ').replace('Z', '').slice(0, 19)}
+            a(href='/users/user/' + post.authorId) #{post.author.name}
+            p #{post.content}
+            if (post.imgPath)
+                img(src=post.imgPath style="max-height=50%; max-width=80%")
+            br
+            h3 Комментарии:
+            if(post.comments)
+              each comm in post.comments
+                p
+                    a(href='/users/user/' + comm.authorId) #{comm.author.name}:
+                    |  #{comm.text}
+
+            form
+                input(type='text' placeholder='Напишите что-нибудь...')
+                button(type='submit' )
+                    | Отправить
+
+        script.
+          supertokens.init({
+            apiDomain: "http://localhost:3001",
+            apiBasePath: "/auth"
+          });

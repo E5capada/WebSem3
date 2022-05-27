@@ -1,0 +1,14 @@
+npm i -s supertokens-node
+
+nest g module auth
+
+nest g service supertokens auth
+
+nest g middleware auth auth
+
+nest g filter auth auth
+
+nest g guard auth auth
+
+nest g decorator session auth
+

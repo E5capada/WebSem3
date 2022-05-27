@@ -1,0 +1,36 @@
+doctype html
+
+html(lang='ru')
+    head
+        title
+            | To Do List
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/ToDoList.css')
+        script(src='js/ToDoList.js')
+        script(src='js/auth.js')
+        script(script src="https://cdn.jsdelivr.net/gh/supertokens/supertokens-website/bundle/bundle.js")
+        script.
+            supertokens.init({
+            apiDomain: "http://localhost:3001",
+                apiBasePath: "/auth"
+            });
+    body
+
+        -let pageNumber = 4
+
+        include ../public/includes/header.pug
+
+        .TopBannerImage
+            #TopBannerText
+                h1 My To Do List
+
+        #todo-wrap
+            form#todo-add
+                input#todo-item(type='text' placeholder='Я хочу...' required='')
+                input#todo-save(type='submit' value='Добавить')
+            #todo-del
+                input#todo-delall(type='button' value='Удалить все')
+                input#todo-delcom(type='button' value='Удалить завершенные')
+            #todo-list
+
+        include ../public/includes/footer.pug

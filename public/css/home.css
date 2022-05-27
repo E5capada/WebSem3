@@ -1,0 +1,409 @@
+/* Banner Image */
+
+.TopBannerImage {
+    background: url(Banners/banner2.jpg);
+    background-repeat: no-repeat;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: auto;
+}
+
+#TopBannerText {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: rgb(1, 1, 59) -1px -2px 0.5em;
+}
+
+#TopBannerText h1 {
+    font-size: 60px;
+}
+
+#TopBannerText h3 {
+    font-size: 25px;
+}
+
+@media (max-width: 800px) {
+    .TopBannerImage {
+        margin-top: 0;
+    }
+    #TopBannerText h1 {
+        font-size: 40px;
+    }
+    #TopBannerText h3 {
+        font-size: 15px;
+    }
+}
+
+
+/* page */
+
+.page{
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+}
+
+
+/* Cards */
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 3;
+    background: white;
+    padding: 10px 30px 10px 20px;
+    margin: 25px;
+    border-bottom: #de8949;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+/* ABOUT US page */
+
+#aboutUs{
+    background: #6a5d71;
+}
+
+#aboutUs .page{
+    height: 600px;
+    padding: 40px;
+}
+
+#aboutUs img{
+    height: 60%;
+    max-width: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+#aboutUs .card{
+    margin-top: -240px;
+    position: relative;
+    z-index: 5;
+    padding: 30px;
+    margin-left: 300px;
+}
+
+#aboutUs h1{
+    padding-bottom: 15px;
+}
+
+#aboutUs p{
+    text-align: justify;
+}
+
+@media (max-width: 800px)
+{
+    #aboutUs{
+        height: 650px;
+    }
+
+    #aboutUs .page{
+        padding: 30px;
+    }
+    #aboutUs img{
+        min-width: 100%;
+    }
+
+    #aboutUs .card{
+        margin-left: 30px;
+    }
+}
+
+
+/* POEMS */
+/* Background for poems page */
+
+.bg-image {
+    background-image: url("Banners/banner.jpeg");
+    /* Add the blur effect */
+    /**filter: blur(8px);
+    -webkit-filter: blur(8px);**/
+    height: 900px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#poems h1, #poetries h1{
+    font-size: 50px;
+    padding-top: 16px;
+    padding-left: 60px ;
+}
+
+#poems a, #poetries a {
+    margin: -25px 25px -15px 25px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    font-size: 24px;
+    transition: .3s ease-in-out;
+}
+
+.mainLink {
+    float: right;
+    background-image: linear-gradient(#de8949 50%, #de8949 50%), linear-gradient(silver 50%, silver 50%);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 2px;
+    color: #1E3A52;
+    padding-bottom: 3px;
+    transition: .5s ease-in-out;
+}
+
+.mainLink:hover {
+    background-size: 100% 2px, 100% 2px;
+    color: #de8949;
+}
+
+#poems .nameLink {
+    font-size: 20px;
+    margin: 20px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 2px;
+    color:black;
+    padding-bottom: 3px;
+    transition: .5s ease-in-out;
+    line-height: 1.2;
+    font-weight: normal;
+    display: block;
+    text-align:center;
+}
+
+#poems .nameLink:hover {
+    background-size: 100% 2px, 100% 2px;
+    color: #de8949;
+}
+
+#poems .card p{
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#poems .card .content{
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#poems .card .content:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+    pointer-events: none;
+}
+
+@media screen and (max-width: 800px) {
+    #poems .column2 {
+        width: 100%;
+    }
+
+    #poems .card .content{
+        height: 120px;
+    }
+
+    #poems{
+        height: 100%;
+    }
+
+    .bg-image{
+        height: 100%;
+    }
+}
+
+
+/* Authors page*/
+
+#poetries{
+    background: #6a5d71;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+#poetries .content{
+    margin-top: 90px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 290px;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+@media screen and (max-width: 800px){
+    #poetries .content{
+        height: 400px;
+    }
+}
+
+#poetries img{
+    margin: 5px;
+}
+
+#poetries .bcground{
+    background: #de8949;
+    width: 100px;
+    height: 200px;
+}
+
+#poetries .mainLink{
+    color: white;
+}
+
+#poetries .mainLink:hover {
+    background-size: 100% 2px, 100% 2px;
+    color: #de8949;
+}
+
+#poetries .bcground{
+    background: #de8949;
+    width: 300px;
+    height: 600px;
+}
+
+
+/* Reviews */
+
+#reviews{
+    background: url(Banners/img.png);
+    background-repeat: no-repeat;
+    height: 700px;
+    background-position: right;
+    z-index: auto;
+}
+
+#reviews h1{
+    color: white;
+    padding: 10px;
+    background: #de8949;
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+@media screen and (max-width: 890px) {
+    #reviews .page {
+        padding-top: 60px;
+    }
+}
+
+.photo{
+    position: relative;
+    width: 30%;
+    height: 20%;
+    max-width: 300px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+    opacity: 1;
+}
+
+#contactInfo{
+    background: url(Banners/footer.jpg);
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: auto;
+}
+
+form {
+    max-width:420px;
+    background: white;
+    padding: 15px;
+    margin-left: 0;
+    margin-top: 60px;
+    border-radius: 5px;
+}
+
+.feedback-input {
+    color:white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid #6a5d71;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+}
+
+.feedback-input:focus { border:2px solid #3f5460; }
+
+textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+#contactInfo [type="submit"] {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: #6a5d71;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+}
+
+#contactInfo [type="submit"]:hover { background:#CC4949; }
+
+
+
+
+
+
+
+
+
+
+
+
+

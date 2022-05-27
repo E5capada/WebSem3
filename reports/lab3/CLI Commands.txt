@@ -1,0 +1,11 @@
+heroku addons:create heroku-postgresql:hobby-dev
+
+npm install pg --save
+
+npm install prisma --save-dev
+
+npx prisma init
+
+npx prisma migrate dev --name init
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres

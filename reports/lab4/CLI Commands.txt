@@ -1,0 +1,10 @@
+nest g module user
+nest g module article
+
+nest g controller user
+nest g controller article
+
+nest g service user
+nest g service article
+
+npm install --save @nestjs/swagger swagger-ui-express

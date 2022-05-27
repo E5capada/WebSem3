@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title edit
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/test2.css')
+    body
+        .card
+            h1 Редактировать пост
+            form(method="POST" action="/")
+                input(type="text" name="title" value=post.title)
+                input(type="text" name="content" value=post.content)
+                button.cancelbtn(type="submit") Сохранить изменения

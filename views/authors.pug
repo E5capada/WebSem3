@@ -1,0 +1,38 @@
+doctype html
+
+html(lang='ru')
+    head
+        title Page Title
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/test2.css')
+        script(src='js/auth.js')
+        script(script src="https://cdn.jsdelivr.net/gh/supertokens/supertokens-website/bundle/bundle.js")
+        script.
+              supertokens.init({
+                apiDomain: "http://localhost:3001",
+                apiBasePath: "/auth"
+              });
+    body
+      -let pageNumber = 2
+
+      include ../public/includes/header.pug
+
+      .cardszone(style="margin-top: 45px")
+          form
+              input(type='text' placeholder='Искать здесь...')
+              button(type='submit')
+          each user in users
+                  .card
+                      if(user.avatar)
+                          img.ava(src=user.avatar)
+                      else
+                          img.ava(src='https://media.pn.am/media/issue/197/297/photo/197297.jpg')
+                      p Имя: #{user.name}
+                      if (user.posts)
+                        p Количество постов: #{user.posts.length}
+                      else
+                        p Количество постов: 3
+                      a(href='users/user/' + user.id) перейти на страницу->
+
+      include ../public/includes/footer.pug

@@ -1,0 +1,7 @@
+.card
+   h1 #{post.title}
+   h3 #{post.createdAt.toISOString().replace('T', ' ').replace('Z', '').slice(0, 19)}
+   a(href='/users/' + post.authorId) #{post.author.name}
+   p #{post.content}
+   if (post.imgPath)
+      img(src=post.imgPath height='300' width='90%')

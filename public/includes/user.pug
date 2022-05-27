@@ -1,0 +1,15 @@
+.card
+    h1 Информация
+    p Имя: #{user.name}
+    P Создан: #{user.createdAt.toISOString().replace('T', ' ').replace('Z', '').slice(0, 19)}
+    h1 активность пользователя:
+    p Количество постов: #{user.posts.length}
+    if (user.comments)
+        p количество комментариев: #{user.comments.length}
+    else
+        p количество комментариев: 0
+
+    if (user.comments)
+        p количество лайков: #{user.comments.length}
+    else
+        p количество лайков: 0

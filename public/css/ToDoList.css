@@ -1,0 +1,147 @@
+html,
+body,
+input {
+    font-family: arial, sans-serif;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+#todo-wrap input {
+    box-sizing: border-box;
+}
+
+#todo-wrap input {
+    padding: 10px;
+}
+
+#todo-wrap input[type=button],
+#todo-wrap input[type=submit] {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* (B) WHOLE CONTAINER */
+
+#todo-wrap {
+    max-width: 100%;
+    background: linear-gradient(to right, #675b7c, #de8949);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+/* (C) HEADER  */
+
+#todo-wrap h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+
+/* (D) ADD ITEM  */
+
+#todo-add {
+    display: flex;
+}
+
+#todo-item {
+    width: 85%;
+}
+
+#todo-save {
+    width: 15%;
+    background: #675b7c;
+    border: 2px solid #5866CF;
+}
+
+
+/* (E) DELETE ITEMS */
+
+#todo-del {
+    margin: 10px 0;
+}
+
+#todo-del input {
+    background: #de8949;
+    border: 2px solid #de8949;
+}
+
+
+/* (F) LIST ITEMS */
+
+
+/* (F1) ITEM ROW */
+
+.todo-row {
+    display: flex;
+    margin-top: 10px;
+}
+
+
+/* (F2) ITEM TEXT */
+
+.todo-item {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.todo-item.cx {
+    background: #FFE1D7;
+    text-decoration: line-through;
+}
+
+.todo-item.done {
+    background: #DCFFD7;
+}
+
+
+/* (F3) CANCEL AND OK BUTTONS */
+
+.todo-cx,
+.todo-ok {
+    width: 50px;
+}
+
+.todo-cx {
+    background: #CF585C;
+    border: 2px solid #CF585C;
+}
+
+.todo-ok {
+    background: #4AA53D;
+    border: 2px solid #4AA53D;
+}
+
+
+.TopBannerImage {
+    background: url(Banners/banner2.jpg);
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: auto;
+}
+
+#TopBannerText {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: rgb(1, 1, 59) -1px -2px 0.5em;
+}
+
+#TopBannerText h1 {
+    font-size: 60px;
+}

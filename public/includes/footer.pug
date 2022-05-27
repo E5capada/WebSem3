@@ -1,0 +1,20 @@
+link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+footer#footer
+
+    p Total time: #{duration} ms
+
+    .socialmedia
+        a.fa.fa-facebook(href='#')
+        a.fa.fa-twitter(href='#')
+        a.fa.fa-vk(href='#')
+        a.fa.fa-instagram(href='#')
+        a.fa.fa-github(href='#')
+    .copyrights
+        p © Mil.Leon, 2022
+
+script.
+    supertokens.init({
+    apiDomain: "http://localhost:3001",
+        apiBasePath: "/auth"
+        });

@@ -1,0 +1,112 @@
+doctype html
+
+html(lang='ru')
+    head
+        title Page Title
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/authors.css')
+
+    style.
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+
+        body {
+            background: url(https://i.pinimg.com/originals/08/b5/49/08b549c185d5972b99890357a2054f3f.jpg);
+            background-repeat: no-repeat;
+            height: 600px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: auto;
+            text-align: center;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 60px;
+        }
+
+        .side {
+            -ms-flex: 30%;
+            flex: 30%;
+            padding: 20px;
+        }
+
+        /* Main column */
+        .content {
+            -ms-flex: 70%;
+            flex: 70%;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+
+            border-bottom: #de8949;
+            border-bottom-style: solid;
+            border-bottom-width: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: #675b7c;
+        }
+
+        a:hover {
+            color: #c93961;
+        }
+
+    body
+
+        .row
+            .side
+                .card
+                    h2 Информация
+                    p Имя: #{user.name}
+                    p Email: #{user.email}
+                    P Создан: #{user.createdAt.toISOString().replace('T', ' ').replace('Z', '').slice(0, 19)}
+                    h2 активность пользователя:
+                    p Количество постов: #{user.posts.length}
+                    if (user.comments)
+                        p количество комментариев: #{user.comments.length}
+                    else
+                        p количество комментариев: 0
+
+                    if (user.comments)
+                        p количество лайков: #{user.comments.length}
+                    else
+                        p количество лайков: 0
+
+                    a(href='/users') Настройки
+                    a(href='/users') Назад
+                    a(href='/users') Выход
+
+            .content
+              each post in user.posts
+                  .card
+                      h2 #{post.title}
+                      h5 #{post.createdAt.toISOString().replace('T', ' ').replace('Z', '').slice(0, 19)}
+                      p #{post.content}
+                      if (post.imgPath)
+                          img(src=post.imgPath height='300' width='90%')
+                      a(href='/posts/post/' + post.id) открыть
+                      a(href='/posts/post/' + post.id + '/edit') Редактировать

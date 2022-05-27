@@ -1,0 +1,122 @@
+<!DOCTYPE html><html><head><title>NewPost</title><meta charset="UTF-8"><link rel="stylesheet" href="css/test2.css"></head><style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Style the body */
+    body {
+        background: url(https://i.pinimg.com/originals/08/b5/49/08b549c185d5972b99890357a2054f3f.jpg);
+        background-repeat: no-repeat;
+        height: 600px;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: auto;
+        text-align: center;
+        background-attachment: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    .card {
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 50%;
+        margin-top: 205px;
+
+        border-bottom: #de8949;
+        border-bottom-style: solid;
+        border-bottom-width: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    a {
+        text-decoration: none;
+        color: #675b7c;
+    }
+
+    a:hover {
+        color: #c93961;
+    }
+
+    input[type=text], input[type=password] {
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 5px;
+        line-height: 22px;
+        background-color: transparent;
+        border: 2px solid #6a5d71;
+        transition: all 0.3s;
+        padding: 13px;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: 0;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #f8e1ff;
+        outline: none;
+        border: 2px solid #3f5460;
+    }
+
+    input::placeholder {
+        color: #ffffff;
+    }
+
+    hr {
+        border: 1px solid white;
+        margin-bottom: 25px;
+    }
+
+    /* Установите стиль для всех кнопок */
+    a, button {
+        background: none;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    a:hover, button:hover {
+        opacity: 1;
+    }
+
+    /* Дополнительные стили для кнопки "Отмена" */
+    .cancelbtn {
+        background: linear-gradient(to right, #a971c9, #ff6e3b);
+        padding: 14px 20px;
+
+    }
+
+    /* Добавить отступы к элементам контейнера */
+    .container {
+        padding: 16px;
+    }
+
+    /* Очистить поплавки */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style><body><div class="card"><h1>Редактировать пост</h1><form method="POST" action="/"><input type="text" name="title"><input type="text" name="content"><button type="submit">Сохранить изменения</button></form></div></body></html>

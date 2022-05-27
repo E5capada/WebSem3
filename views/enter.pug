@@ -1,0 +1,54 @@
+doctype html
+
+html(lang='ru')
+    head
+        title Enter
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/enter.css')
+        script(src='js/auth.js')
+        script(script src="https://cdn.jsdelivr.net/gh/supertokens/supertokens-website/bundle/bundle.js")
+        script.
+              supertokens.init({
+                apiDomain: "http://localhost:3001",
+                apiBasePath: "/auth"
+              });
+    body
+        .card
+            if(registration)
+
+                h1 Регистрация
+                input(type='text' name='name' id='name' placeholder='Имя' required)
+                input(type='text' name='email' id='email' placeholder='Email' required)
+                input(type='text' name='password' id='password' placeholder='Пароль' required)
+
+                p *Создавая учетную запись, вы соглашаетесь с нашими
+                    a(href="#" style="color:dodgerblue") условия и конфиденциальность
+
+                .clearfix
+                    button(type="button" id="login" class="cancelbtn")
+                        | Зарегистрироваться
+
+
+
+                a.reg(href='/enter.html' )
+                    | Уже есть аккаунт
+            else
+                h1 Уже есть аккаунт?
+                input(type='email' name='email' id='email' placeholder='Email' required)
+                input(type='password' name='password' id="password"  placeholder='Пароль' required)
+
+                label
+                    input(type="checkbox" checked="checked" name="remember" style="margin-bottom:15px")
+                    | Запомнить меня
+
+                .clearfix
+                    button(onclick='login()' type="button"  class="cancelbtn" ) Вход
+
+                a.reg(href='/registration.html' )
+                    | Зарегистрироваться
+
+        script.
+          supertokens.init({
+            apiDomain: "http://localhost:3001",
+            apiBasePath: "/auth"
+          });

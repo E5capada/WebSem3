@@ -1,0 +1,22 @@
+doctype html
+
+html(lang='ru')
+    head
+        title Page Title
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/enter.css')
+    body
+      -let pageNumber = 1
+        include ../public/includes/header.pug
+
+        form(action="")
+            h1 Уже есть аккаунт?
+            input(type='text' name='title' placeholder='Название' required)
+            input(type='text' name='content' placeholder='Напишите что-нибудь...' required)
+
+            .clearfix
+                button(type="button" class="cancelbtn")
+                | Отправить
+
+        include ../public/includes/footer.pug

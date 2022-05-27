@@ -1,0 +1,31 @@
+doctype html
+html(lang='ru')
+    head
+        title Gallery
+        meta(charset='UTF-8')
+        link(href='https://unpkg.com/flickity@2/dist/flickity.min.css' rel='stylesheet')
+        link(href='css/main.css' rel='stylesheet')
+        link(href='css/gallery.css' rel='stylesheet')
+        script(src='js/auth.js')
+        script(script src="https://cdn.jsdelivr.net/gh/supertokens/supertokens-website/bundle/bundle.js")
+        script.
+              supertokens.init({
+                apiDomain: "http://localhost:3001",
+                apiBasePath: "/auth"
+              });
+    body
+        -let pageNumber = 3
+
+        include ../public/includes/header.pug
+
+        main#main
+            .carousel(data-flickity='{ "autoPlay": true }')
+                -let imgs = ['img/g-img1.jpg', 'img/g-img2.jpg', 'img/g-img3.jpg', 'img/g-img4..png', 'img/g-img5.jpg', 'img/g-img6.jpg' ]
+
+                each img_ in imgs
+                    .carousel-cell
+                        img(src=img_ alt='')
+
+        include ../public/includes/footer.pug
+
+        script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js ')

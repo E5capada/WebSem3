@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        title NewPost
+        meta(charset='UTF-8')
+        link(rel='stylesheet' href='css/post.css')
+    style.
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+
+        body {
+            background: url(http://iwphoto.ru/wp-content/uploads/2019/06/zakat15ka-2500.jpg);
+            background-repeat: no-repeat;
+            height: 600px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: auto;
+            text-align: center;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .card {
+            max-width: 420px;
+            background: #29212c;
+            padding: 25px;
+            margin-left: 0;
+            margin-top: 60px;
+            border-radius: 5px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+        }
+    body
+        .card
+            h1 Новый пост
+            form(method="POST" action="/")
+                input(type="text" name="title" placeholder="Название...")
+                input(type="text" name="content" placeholder="Текс...")
+                button(type="submit") Создать
